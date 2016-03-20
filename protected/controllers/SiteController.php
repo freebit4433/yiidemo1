@@ -29,7 +29,29 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		
+		//$param1 =  Yii::app()->request->baseUrl;
+		$param1 = Yii::app()->baseUrl;
+		$param2 = Yii::app()->basePath;
+		$data = array(
+			'param1' => $param1,
+			'param2' => $param2
+		);
+		$this->render('index',$data);
+	}
+
+	public function actionInsert(){
+
+
+		$this->render('insert');
+	}
+
+	public function actionUpdate(){
+
+	}
+
+	public function actionDelete(){
+
 	}
 
 	/**
